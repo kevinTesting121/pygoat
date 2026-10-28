@@ -20,7 +20,7 @@ import subprocess
 import yaml
 
 stream = open('/home/fox/test.yaml', 'r')
-data = yaml.load(stream)
+data = yaml.load(stream, Loader=yaml.Loader)
 
 '''
 stdout, stderr = data.communicate()
