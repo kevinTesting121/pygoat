@@ -7,6 +7,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+RUN useradd -m appuser && chown -R appuser:appuser /app
+USER appuser
+
 ENV FLASK_APP=main.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
